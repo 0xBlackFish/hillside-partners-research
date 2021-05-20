@@ -122,6 +122,8 @@ if password == st.secrets['site_password']:
     st.altair_chart(bar,use_container_width=True)
     st.write('')
     st.write('')
+    st.write('')
+    st.write('')
 
 
     # All Categories Heat Map
@@ -133,6 +135,10 @@ if password == st.secrets['site_password']:
         tooltip=[alt.Tooltip('Category'), alt.Tooltip('yearmonth(month)',title='As of Date'),alt.Tooltip('spend',title='Spend',format='$,.0f')]
     ).properties(width=1400)
 
+
+    st.header('All Categories Heatmap')
+    st.write('')
+    st.write('')
     st.altair_chart(all_categories_heatmap,use_container_width=True)
 
 else:
