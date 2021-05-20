@@ -120,6 +120,20 @@ if password == st.secrets['site_password']:
     ).properties(height=400,width=1400)
 
     st.altair_chart(bar,use_container_width=True)
+    st.write('')
+    st.write('')
+
+
+    # All Categories Heat Map
+
+    all_categories_heatmap = alt.Chart(category_processed_df).mark_rect().encode(
+        x=alt.X('yearmonth(month):O',axis=alt.Axis(title='',labelFontSize=12,labelPadding=10)),
+        y=alt.Y('Category',axis=alt.Axis(title='Category',labelFontSize=12,labelPadding=10,titleFontSize=16,titlePadding=20)),
+        color=alt.Color('spend',legend=alt.Legend(format='$,.0f',title='Spend')),
+        tooltip=[alt.Tooltip('Category'), alt.Tooltip('yearmonth(month)',title='As of Date'),alt.Tooltip('spend',title='Spend',format='$,.0f')]
+    ).properties(width=1400)
+
+    st.altair_chart(all_categories_heatmap,use_container_width=True)
 
 else:
 
