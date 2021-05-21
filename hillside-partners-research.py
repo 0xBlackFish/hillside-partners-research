@@ -132,7 +132,7 @@ if password == st.secrets['site_password']:
         x=alt.X('yearmonth(month):O',axis=alt.Axis(title='',labelFontSize=12,labelPadding=10)),
         y=alt.Y('Category',axis=alt.Axis(title='Category',labelFontSize=12,labelPadding=10,titleFontSize=16,titlePadding=20)),
         #color=alt.Color('spend',legend=alt.Legend(format='$,.0f',title='Spend')),
-        color=alt.Color('yoy_growth',legend=alt.Legend(format='.1%',title='YoY Growth'))
+        color=alt.Color('yoy_growth',legend=alt.Legend(format='.1%',title='YoY Growth')),
         tooltip=[alt.Tooltip('Category'), alt.Tooltip('yearmonth(month)',title='As of Date'),alt.Tooltip('spend',title='Spend',format='$,.0f')]
     ).properties(width=1400)
 
