@@ -8,7 +8,7 @@ import streamlit as st
 st.set_page_config(layout="wide")
 password = st.text_input('Enter the password to access the site: ')
 
-if password == 'abc': #st.secrets['site_password']:
+if password == st.secrets['site_password']:
 
     # Import file
     category_df = pd.read_csv('Amazon Category Data Jan 2017 Through April 2021.csv')
