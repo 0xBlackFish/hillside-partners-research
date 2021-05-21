@@ -129,7 +129,7 @@ if password == st.secrets['site_password']:
         tooltip=[alt.Tooltip('yearmonth(month)',title='As of Date'),alt.Tooltip('spend',title='CY Spend',format='$,.0f'),alt.Tooltip('py_month',title='PY - As of Date'),alt.Tooltip('py_spend',title='PY Spend',format='$,.0f')]
     )
 
-    st.altair_chart((cy + py).properties(height=400, width=1400),use_container_width=True)
+    st.altair_chart((cy + py).properties(height=400, width=1400).configure_axis(grid=False).configure_view(strokeWidth=0),use_container_width=True)
 
     st.write('')
     st.write('')
@@ -141,7 +141,7 @@ if password == st.secrets['site_password']:
         y=alt.Y('yoy_growth',axis=alt.Axis(title='YoY Growth',format='%',labelFontSize=12, labelPadding=10, titleFontSize=16, titlePadding=20)),
         color=alt.Color('yoy_growth_color', scale=alt.Scale(domain=domain, range=range_), legend=None),
         tooltip=[alt.Tooltip('yearmonth(month)',title='As of Date'),alt.Tooltip('yoy_growth',title='YoY Growth',format='.1%')]
-    ).properties(height=400,width=1400)
+    ).properties(height=400,width=1400).configure_axis(grid=False).configure_view(strokeWidth=0)
 
     st.altair_chart(bar,use_container_width=True)
     st.write('')
@@ -242,7 +242,7 @@ if password == st.secrets['site_password']:
     )
 
 
-    st.altair_chart((cy_brand + py_brand).properties(height=400, width=1400),use_container_width=True)
+    st.altair_chart((cy_brand + py_brand).properties(height=400, width=1400).configure_axis(grid=False).configure_view(strokeWidth=0),use_container_width=True)
 
     st.write('')
     st.write('')
@@ -254,7 +254,7 @@ if password == st.secrets['site_password']:
         y=alt.Y('yoy_growth',axis=alt.Axis(title='YoY Growth',format='%',labelFontSize=12, labelPadding=10, titleFontSize=16, titlePadding=20)),
         color=alt.Color('yoy_growth_color', scale=alt.Scale(domain=domain, range=range_), legend=None),
         tooltip=[alt.Tooltip('yearmonth(month)',title='As of Date'),alt.Tooltip('yoy_growth',title='YoY Growth',format='.1%')]
-    ).properties(height=400,width=1400)
+    ).properties(height=400,width=1400).configure_axis(grid=False).configure_view(strokeWidth=0)
 
     st.altair_chart(bar_brand,use_container_width=True)
     st.write('')
